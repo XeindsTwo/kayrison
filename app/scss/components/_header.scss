@@ -1,5 +1,7 @@
 .header {
   padding: 12px 0;
+/*  position: sticky;*/
+  top: 0;
 
   &__inner {
     @include flex-align-center(50);
@@ -16,6 +18,12 @@
 
   &__nav {
     margin-right: 196px;
+    @media (max-width: 1312px) {
+      margin-right: 182px;
+    }
+    @include r($desktop) {
+      margin-right: 0;
+    }
   }
 
   &__list {

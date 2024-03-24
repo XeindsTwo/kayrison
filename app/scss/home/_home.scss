@@ -1,10 +1,26 @@
 .home {
   padding: 24px 0;
+/*  position: sticky;*/
+  top: 58px;
 
   &__inner {
     @include flex-align-center(44);
     align-items: flex-start;
     min-height: 650px;
+    @media (max-width: 1300px) {
+      min-height: 600px;
+    }
+    @media (max-width: 1100px) {
+      min-height: 540px;
+    }
+    @media (max-width: 915px) {
+      min-height: 500px;
+    }
+    @media (max-width: 880px) {
+      flex-direction: column;
+      gap: 15px;
+      min-height: auto;
+    }
   }
 
   &__decor {
@@ -13,10 +29,37 @@
     width: 100%;
     margin-top: 34px;
     position: relative;
+    @media (max-width: 1300px) {
+      max-width: 480px;
+    }
+    @include r($desktop) {
+      max-width: 460px;
+    }
+    @include r($lg) {
+      max-width: 420px;
+    }
+    @media (max-width: 930px) {
+      max-width: max-content;
+      margin-top: 15px;
+    }
+    @media (max-width: 880px) {
+      margin: 0 auto 0;
+    }
   }
 
   &__img {
     transition: opacity .4s;
+    @media (max-width: 930px) {
+      transform: scale(0.95);
+    }
+    @media (max-width: 880px) {
+      transform: scale(1);
+      width: auto;
+      height: 370px;
+    }
+    @include r($phone) {
+      height: 325px;
+    }
 
     &--light {
       &[data-theme='dark'] {
@@ -38,6 +81,11 @@
     @include flex-column(60);
     max-width: 712px;
     align-self: stretch;
+    @media (max-width: 880px) {
+      text-align: center;
+      gap: 30px;
+      margin: 0 auto;
+    }
   }
 
   &__title {
@@ -46,11 +94,46 @@
     line-height: .9;
     font-family: $pragmatica;
     letter-spacing: -1.56px;
+    @media (max-width: 1300px) {
+      font-size: 74px;
+      letter-spacing: -1.30px;
+    }
+    @include r($desktop) {
+      font-size: 70px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 66px;
+    }
+    @include r($lg) {
+      font-size: 60px;
+    }
+    @media (max-width: 915px) {
+      font-size: 54px;
+    }
+    @media (max-width: 880px) {
+      font-size: 52px;
+      line-height: 0.97;
+    }
+    @include r($tablet) {
+      font-size: 48px;
+    }
+    @include r($sm) {
+      font-size: 44px;
+    }
+    @media (max-width: 540px) {
+      font-size: 42px;
+    }
+    @include r($phone) {
+      font-size: 38px;
+    }
 
     span {
       @include flex-align-center(0);
       padding-left: 8px;
       color: $accent;
+      @media (max-width: 880px) {
+        justify-content: center;
+      }
 
       img {
         transform: translateY(4px);
@@ -63,9 +146,24 @@
     margin-top: auto;
     margin-bottom: 32px;
     max-width: 400px;
+    @include r($lg) {
+      gap: 24px;
+    }
   }
 
   &__actions {
     @include flex-align-center(16);
+    justify-content: center;
+    @include r($phone) {
+      flex-direction: column;
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto;
+
+      .btn {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
   }
 }

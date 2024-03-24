@@ -23,15 +23,7 @@
   }
 
   &--header {
-    @media (max-width: 1160px) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  &--footer {
-    @include r($tablet) {
+    @media (max-width: 342px) {
       display: flex;
       align-items: center;
       justify-content: center;

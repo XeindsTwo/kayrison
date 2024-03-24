@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gsap": "^3.12.5",
     "gulp-imagemin": "^7.1.0",
     "urix": "^0.1.0"
   },

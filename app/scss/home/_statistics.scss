@@ -1,9 +1,11 @@
 .statistics {
+  position: relative;
+  z-index: 30;
   padding: 156px 0;
   border-radius: 40px;
   background-color: $white30;
   box-shadow: 0 -12px 32px 0 rgba(0, 0, 0, 0.05);
-  transition: background-color .4s;
+  transition: background-color .4s, transform .4s;
 
   &[data-theme='dark'] {
     background-color: $blackTheme5;
