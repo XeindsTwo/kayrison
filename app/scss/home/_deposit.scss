@@ -1,0 +1,71 @@
+.deposit {
+  margin-top: 72px;
+  color: $white;
+
+  &__inner {
+    @include flex-align-center(40);
+    justify-content: space-between;
+    padding: 40px 60px 40px 32px;
+    border-radius: 40px;
+    background: radial-gradient(98.51% 98.51% at 50% 98.51%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.00) 37.09%), #262626;
+    box-shadow: 0 -12px 32px 0 rgba(159, 175, 217, 0.05);
+
+    &[data-theme='dark'] {
+      background: radial-gradient(98.51% 98.51% at 50% 98.51%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.00) 38.27%), #444BF6;
+      box-shadow: 0 -12px 32px 0 rgba(159, 175, 217, 0.05);
+    }
+  }
+
+  &__content {
+    min-height: 285px;
+    @include flex-column(0);
+    max-width: 465px;
+  }
+
+  &__svg {
+    transform: translateY(-1px);
+  }
+
+  &__text {
+    color: rgba($white, .8);
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    margin-top: auto;
+
+    &:hover {
+      border-color: #2BAD72;
+      background-color: transparent;
+      color: #2BAD72;
+
+      svg path {
+        fill: #2BAD72;
+      }
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: $white;
+      border-color: $white;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
+    &[data-theme='dark']:hover {
+      background-color: $white;
+      border-color: transparent;
+      color: #0db06a;
+
+      svg path {
+        fill: #0db36a;
+      }
+    }
+  }
+
+  &__decor {
+    @include bg;
+  }
+}

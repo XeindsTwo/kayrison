@@ -1,0 +1,102 @@
+.faq {
+  &__list {
+    @include flex-column(16);
+    max-width: 632px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    padding: 24px 32px;
+    border-radius: 24px;
+    background-color: $white;
+    box-shadow: 0 8px 32px 0 rgba(240, 241, 247, 0.88);
+
+    &[data-theme='dark'] {
+      background-color: $blackTheme5;
+      box-shadow: 0 16px 40px 0 #202020;
+    }
+  }
+
+  &__head {
+    @include flex-between(20);
+    align-items: center;
+    transition: color .4s;
+    cursor: pointer;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &[data-theme='dark']:hover {
+      color: $accentLight;
+    }
+  }
+
+  &__title {
+    font-family: $pragmatica;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.48px;
+    max-width: 500px;
+  }
+
+  &__text {
+    line-height: 1.4;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+    color: rgba($black, .8);
+
+    &[data-theme='dark'] {
+      color: rgba($white, .8);
+    }
+
+    &.open {
+      margin-top: 8px;
+    }
+  }
+
+  &__btn {
+    width: 48px;
+    height: 48px;
+    position: relative;
+
+    &:focus {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &.open {
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    &::before, &::after {
+      @include pseudo;
+      display: block;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 2px;
+      background: $black;
+      opacity: 1;
+      box-shadow: none;
+      transition: opacity .3s;
+    }
+
+    &::before {
+      top: 46.64%;
+      left: 50%;
+      width: 12px;
+      transform: translateX(-50%) translateY(.5px);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@include('components/_head.html', {
+title: 'Kayrison | Обмен криптовалюты'
+})
+
+<main>
+  @include('components/_header.html')
+  @include('home/_home.html')
+  @include('home/_statistics.html')
+  @include('home/_information.html')
+
+  @include('home/_deposit.html')
+  @include('home/_faq.html')
+</main>
+@include('components/_footer.html')
+<script src="js/main.min.js" type="module" defer></script>

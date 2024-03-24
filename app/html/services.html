@@ -1,0 +1,156 @@
+@include('components/_head.html', {
+title: 'Kayrison | Список сервисов'
+})
+
+<main>
+  @include('components/_header.html')
+  <section class="services">
+    <div class="container">
+      <div class="services__inner">
+        <div class="services__info">
+          <h1 class="title">
+            Список сервисов, <br> с которыми мы работаем
+          </h1>
+          <p class="services__text">
+            Принимаю платежи через: Paypal, G2G, Skrill, SEPA, IBAN, Hyperwallet (Турниры Epic Games / Код автора),
+            Wise. Принимаю платежи на: Европейские счета, Neteller, Eldorado gg, iGVault, Odealo, WebMoney, Payeer.
+          </p>
+          <a class="btn" href="" target="_blank">
+          <span class="btn-wrapper">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2004_202)">
+                  <path
+                      d="M14.7011 1.41942L0.525852 6.91398C-0.0445851 7.16986 -0.237523 7.68226 0.387977 7.96036L4.02454 9.12201L12.8173 3.65983C13.2974 3.31692 13.7889 3.40836 13.3659 3.78558L5.81416 10.6585L5.57695 13.5672C5.79667 14.0163 6.19898 14.0184 6.4556 13.7951L8.54492 11.808L12.1232 14.5013C12.9543 14.9959 13.4065 14.6767 13.5853 13.7703L15.9324 2.59933C16.176 1.48354 15.7605 0.99192 14.7011 1.41942Z"
+                      fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2004_202">
+                    <rect width="16" height="16" fill="#040303"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            Связаться с оператором
+          </span>
+          </a>
+        </div>
+        <ul class="services__list">
+          <li class="services__item">
+            <span class="services__name">
+              Wise <span class="services__percent">5-30%</span>
+            </span>
+            <svg class="services__wise" width="71" height="16" viewBox="0 0 71 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M39.3204 0.239197L43.6338 0.239197L41.4638 15.7874H37.1506L39.3204 0.239197ZM33.8827 0.239197L30.9719 9.19598L29.7017 0.239197L26.6851 0.239197L22.8746 9.16941L22.3984 0.239197L18.2173 0.239197L19.6728 15.7874H23.1393L27.426 5.95351L28.9344 15.7874L32.3479 15.7874L37.9842 0.239197L33.8827 0.239197ZM70.0953 9.2757H59.8546C59.9075 11.2958 61.1116 12.6246 62.8844 12.6246C64.2208 12.6246 65.2793 11.907 66.0996 10.5383L69.5567 12.117C68.3687 14.4678 65.8653 16 62.7786 16C58.5712 16 55.7795 13.1561 55.7795 8.58478C55.7795 3.56147 59.0607 0 63.6915 0C67.7665 0 70.3334 2.76413 70.3334 7.06976C70.3334 7.78741 70.254 8.50506 70.0953 9.2757ZM66.2583 6.29902C66.2583 4.49171 65.2528 3.34885 63.6386 3.34885C62.0245 3.34885 60.5955 4.54486 60.2251 6.29902H66.2583ZM4.73657 4.92493L0.333374 10.0931H8.1951L9.07891 7.65582H5.71035L7.76906 5.26514L7.77569 5.20134L6.43673 2.88773L12.4581 2.88773L7.79024 15.7874H10.9841L16.6205 0.239197L2.05867 0.239197L4.73525 4.92493H4.73657ZM50.646 3.34885C52.1675 3.34885 53.5012 4.17012 54.6655 5.57876L55.2768 1.19601C54.1918 0.458478 52.7232 0 50.7783 0C46.9149 0 44.7451 2.27243 44.7451 5.15617C44.7451 7.1562 45.8565 8.37876 47.6823 9.16941L48.5556 9.56818C50.1829 10.2658 50.6196 10.6113 50.6196 11.3489C50.6196 12.0864 49.8853 12.5981 48.7673 12.5981C46.9215 12.6046 45.4265 11.6545 44.3019 10.0332L43.6787 14.4997C44.9595 15.4805 46.6014 16 48.7673 16C52.4387 16 54.6946 13.8738 54.6946 10.9236C54.6946 8.91696 53.8081 7.62797 51.5722 6.61797L50.6196 6.16614C49.2964 5.57477 48.8466 5.24919 48.8466 4.59802C48.8466 3.89371 49.4618 3.34885 50.646 3.34885Z" fill="#00590E"/>
+            </svg>
+            <p class="services__content">
+              Принимаю платеж
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              Paypal <span class="services__percent">5-30%</span>
+            </span>
+            <div class="services__block">
+              <img class="services__logo services--paypal" src="images/services/2.svg" width="90" height="24" alt="Paypal logo">
+              <img class="services__logo services--paypal-dark" src="images/services/paypal-dark.svg" width="90" height="24" alt="Paypal logo">
+            </div>
+            <p class="services__content">
+              Принимаю платеж
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              G2G <span class="services__percent">5-30%</span>
+            </span>
+            <img class="services__logo" src="images/services/3.svg" width="24" height="24" alt="G2G logo">
+            <p class="services__content">
+              Вывожу с этого сервиса
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              Hyperwallet <span class="services__percent">5-30%</span>
+            </span>
+            <img class="services__logo" src="images/services/4.svg" width="24" height="24" alt="Hyperwallet logo">
+            <p class="services__content">
+              Вывожу с этого сервиса
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              SEPA <span class="services__percent">5-30%</span>
+            </span>
+            <div class="services__block">
+              <img class="services__logo services--sepa" src="images/services/5.svg" width="55" height="24" alt="SEPA logo">
+              <img class="services__logo services--sepa-dark" src="images/services/sepa-dark.svg" width="55" height="24" alt="SEPA logo">
+            </div>
+            <p class="services__content">
+              Принимаю платеж
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              IBAN <span class="services__percent">5-30%</span>
+              <span class="services__subtext">
+                Банковские счета
+              </span>
+            </span>
+            <img class="services__logo services__logo--iban" src="images/services/6.svg" width="24" height="24" alt="IBAN logo">
+            <p class="services__content">
+              Принимаю платеж
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              Neteller <span class="services__percent">5-30%</span>
+            </span>
+            <img class="services__logo" src="images/services/7.svg" width="93" height="16" alt="Neteller logo">
+            <p class="services__content">
+              Принимаю платеж
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              Eldorado <span class="services__percent">5-30%</span>
+            </span>
+            <img class="services__logo" src="images/services/8.svg" width="24" height="24" alt="Neteller logo">
+            <p class="services__content">
+              Вывожу с этого сервиса
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              iGVault <span class="services__percent">5-30%</span>
+            </span>
+            <img class="services__logo" src="images/services/9.svg" width="23" height="25" alt="iGVault logo">
+            <p class="services__content">
+              Вывожу с этого сервиса
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              WebMoney <span class="services__percent">5-30%</span>
+            </span>
+            <img class="services__logo" src="images/services/10.svg" width="24" height="24" alt="WebMoney logo">
+            <p class="services__content">
+              Принимаю платеж
+            </p>
+          </li>
+          <li class="services__item">
+            <span class="services__name">
+              И многое другое <span class="services__percent">5-30%</span>
+            </span>
+            <div class="services__block">
+              <img class="services__logo services__logo--any services--any" src="images/services/11.svg" width="42.5" height="24" alt="Декор иконка">
+              <img class="services__logo services__logo--any services--any-dark" src="images/services/any-dark.svg" width="42.5" height="24" alt="Paypal logo">
+            </div>
+            <p class="services__content">
+              Принимаю платеж
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+@include('components/_footer.html')
+<script src="js/main.min.js" type="module" defer></script>
