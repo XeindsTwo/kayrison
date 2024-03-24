@@ -101,6 +101,8 @@
     }
     @media (max-width: 430px) {
       min-height: 345px;
+      padding: 20px 15px;
+      border-radius: 14px;
     }
 
     &:last-child {
@@ -161,7 +163,10 @@
     }
     @media (max-width: 435px) {
       right: -45px;
-      width: 150px;
+      width: 145px;
+    }
+    @media (max-width: 395px) {
+      display: none;
     }
   }
 
@@ -218,6 +223,9 @@
     @media (max-width: 435px) {
       right: -40px;
     }
+    @media (max-width: 395px) {
+      display: none;
+    }
   }
 
   &__img {
@@ -267,6 +275,9 @@
     @media (max-width: 430px) {
       width: 160px;
       right: -47px;
+    }
+    @media (max-width: 395px) {
+      display: none;
     }
 
     &[data-theme='dark'] {
