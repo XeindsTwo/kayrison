@@ -20,7 +20,7 @@
     box-shadow: 0 -12px 32px 0 rgba(0, 0, 0, 0.03);
   }
   @include r($phone) {
-    padding-top: 50px;
+    padding-top: 45px;
   }
 
   &[data-theme="dark"] {

@@ -1,8 +1,17 @@
 .faq {
+  &__top-title {
+    @include r($sm) {
+      margin-bottom: 12px;
+    }
+  }
+
   &__list {
     @include flex-column(16);
     max-width: 632px;
     margin: 0 auto;
+    @include r($sm) {
+      gap: 12px;
+    }
   }
 
   &__item {
@@ -10,6 +19,18 @@
     border-radius: 24px;
     background-color: $white;
     box-shadow: 0 8px 32px 0 rgba(240, 241, 247, 0.88);
+    @include r($lg) {
+      border-radius: 20px;
+    }
+    @include r($tablet) {
+      padding: 20px 24px;
+    }
+    @include r($sm) {
+      padding: 16px 18px;
+    }
+    @include r($phone) {
+      border-radius: 16px;
+    }
 
     &[data-theme='dark'] {
       background-color: $blackTheme5;
@@ -39,6 +60,18 @@
     line-height: 1;
     letter-spacing: -0.48px;
     max-width: 500px;
+    @media (max-width: 1100px) {
+      font-size: 22px;
+      letter-spacing: -0.3px;
+    }
+    @include r($sm) {
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+    @include r($phone) {
+      font-size: 18px;
+      line-height: 1.1;
+    }
   }
 
   &__text {
@@ -54,7 +87,7 @@
     }
 
     &.open {
-      margin-top: 8px;
+      margin-top: 10px;
     }
   }
 
@@ -62,6 +95,13 @@
     width: 48px;
     height: 48px;
     position: relative;
+    padding: 23px;
+
+    @include r($sm) {
+      padding: 14px 19px;
+      height: 40px;
+      border-radius: 10px;
+    }
 
     &:focus {
       &::before {
@@ -86,12 +126,14 @@
       opacity: 1;
       box-shadow: none;
       transition: opacity .3s;
+      @include r($sm) {
+        width: 11px;
+      }
     }
 
     &::before {
       top: 46.64%;
       left: 50%;
-      width: 12px;
       transform: translateX(-50%) translateY(.5px);
     }
 

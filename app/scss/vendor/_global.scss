@@ -109,6 +109,9 @@
   @include r($sm) {
     margin-top: 90px;
   }
+  @include r($phone) {
+    margin-top: 80px;
+  }
 }
 
 .title {
@@ -153,13 +156,19 @@
     }
     @include r($lg) {
       font-size: 28px;
+      letter-spacing: -0.5px;
       line-height: 1;
     }
     @include r($tablet) {
       font-size: 26px;
+      line-height: 1.1;
+      letter-spacing: -0.4px;
     }
     @include r($sm) {
       font-size: 24px;
+    }
+    @include r($phone) {
+      letter-spacing: -0.2px;
     }
   }
 }

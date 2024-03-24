@@ -1,12 +1,31 @@
 .top {
   margin: 0 auto 64px;
   text-align: center;
+  @media (max-width: 1300px) {
+    margin-bottom: 50px;
+  }
+  @include r($desktop) {
+    margin-bottom: 40px;
+  }
+  @include r($lg) {
+    margin-bottom: 34px;
+  }
+  @include r($sm) {
+    margin-bottom: 26px;
+  }
+  @include r($phone) {
+    margin-bottom: 23px;
+  }
 
   &__text {
     margin: 0 auto;
     max-width: 385px;
     font-size: 16px;
     color: rgba($black, .8);
+    @include r($phone) {
+      font-size: 14px;
+      max-width: 320px;
+    }
 
     &[data-theme='dark'] {
       color: rgba($white, .8);
