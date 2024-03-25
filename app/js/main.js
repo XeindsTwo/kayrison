@@ -1,54 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const faqHeads = document.querySelectorAll('.faq__head');
+import {theme} from './theme.js';
 
-  faqHeads.forEach(head => {
-    head.addEventListener('click', () => {
-      const faqItem = head.closest('.faq__item');
-      const faqText = faqItem.querySelector('.faq__text');
-      const isOpen = faqText.classList.contains('open');
-
-      if (isOpen) {
-        faqText.style.maxHeight = null;
-        faqText.classList.remove('open');
-
-        const faqButton = faqItem.querySelector('.faq__btn');
-        faqButton.classList.remove('open');
-      } else {
-        const openFaqItem = document.querySelector('.faq__item .faq__text.open');
-        if (openFaqItem) {
-          const openFaqButton = openFaqItem.closest('.faq__item').querySelector('.faq__btn');
-          openFaqItem.style.maxHeight = null;
-          openFaqItem.classList.remove('open');
-          openFaqButton.classList.remove('open');
-        }
-
-        faqText.style.maxHeight = `${faqText.scrollHeight}px`;
-        faqText.classList.add('open');
-        const faqButton = faqItem.querySelector('.faq__btn');
-        faqButton.classList.add('open');
-      }
-    });
-  });
-
-  const firstFaqButton = document.querySelector('.faq__btn');
-  firstFaqButton.classList.add('open');
-
-  const defaultQuestion = document.querySelector('.faq__item:first-of-type .faq__text');
-  defaultQuestion.style.maxHeight = `${defaultQuestion.scrollHeight}px`;
-  defaultQuestion.classList.add('open');
-
-  const faqButtons = document.querySelectorAll('.faq__btn');
-  faqButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      button.blur();
-    });
-  });
-});
+theme();
 
 const body = document.body;
 const menuBtn = document.querySelector('.menu-btn');
 const header = document.querySelector('.header__mobile');
-const anchors = document.querySelectorAll('a[href*="#"]');
+const anchors = document.querySelectorAll('a.header__link-mobile');
 
 menuBtn.addEventListener('click', (event) => {
   event.preventDefault();
@@ -58,41 +15,31 @@ menuBtn.addEventListener('click', (event) => {
   menuBtn.blur();
 });
 
-/*window.addEventListener('scroll', function () {
-  const header = document.querySelector('.header');
-  const home = document.querySelector('.home');
-  const statisticsSection = document.getElementById('statistics');
-  const scrollY = window.scrollY || window.pageYOffset;
-  const minWidth = 910;
-
-  if (window.innerWidth >= minWidth && statisticsSection) {
-    if (scrollY >= statisticsSection.offsetTop) {
-      header.style.position = 'static';
-      home.style.position = 'static';
-    } else {
-      header.style.position = 'sticky';
-      home.style.position = 'sticky';
-    }
+function scrollToTarget(targetId) {
+  const targetSection = document.querySelector(targetId);
+  if (targetSection) {
+    body.classList.remove('body--active');
+    header.classList.remove('active');
+    menuBtn.classList.remove('active');
+    setTimeout(() => {
+      let targetOffset;
+      if (targetId.includes('#testimonials')) {
+        targetOffset = targetSection.offsetTop;
+      } else {
+        targetOffset = targetSection.offsetTop - 30;
+      }
+      window.scrollTo({top: targetOffset, behavior: 'smooth'});
+    }, 400);
   }
-});*/
-
-
-//Theme
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-  document.querySelectorAll('*').forEach(element => {
-    element.setAttribute('data-theme', currentTheme);
-  });
 }
 
-const switchBtn = document.querySelector('.switch');
+function handleAnchorClick(event) {
+  event.preventDefault();
+  const targetId = this.getAttribute('href');
+  scrollToTarget(targetId);
+}
 
-switchBtn.addEventListener('click', () => {
-  switchBtn.classList.toggle('dark');
-  const currentTheme = localStorage.getItem('theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  localStorage.setItem('theme', newTheme);
-  document.querySelectorAll('*').forEach(element => {
-    element.setAttribute('data-theme', newTheme);
-  });
-});
+for (const anchor of anchors) {
+  anchor.addEventListener('click', handleAnchorClick);
+  anchor.addEventListener('touchstart', handleAnchorClick, {passive: true});
+}

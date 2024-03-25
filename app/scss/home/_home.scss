@@ -1,7 +1,10 @@
 .home {
   padding: 24px 0;
-/*  position: sticky;*/
-  top: 58px;
+/*  position: sticky;
+  top: 58px;*/
+  @media (max-width: 880px) or (max-height: 850px) {
+    position: static;
+  }
 
   &__inner {
     @include flex-align-center(44);
@@ -124,7 +127,7 @@
       font-size: 42px;
     }
     @include r($phone) {
-      font-size: 38px;
+      font-size: 37px;
     }
 
     span {
@@ -137,6 +140,24 @@
 
       img {
         transform: translateY(4px);
+        @media (max-width: 880px) {
+          width: 35px;
+          height: 35px;
+        }
+        @include r($sm) {
+          height: 32px;
+          width: 32px;
+          transform: translateY(0px);
+        }
+        @media (max-width: 540px) {
+          height: 30px;
+          width: 30px;
+        }
+        @include r($phone) {
+          height: 27px;
+          width: 27px;
+          transform: translateY(1px);
+        }
       }
     }
   }
@@ -153,7 +174,9 @@
 
   &__actions {
     @include flex-align-center(16);
-    justify-content: center;
+    @media (max-width: 880px) {
+      justify-content: center;
+    }
     @include r($phone) {
       flex-direction: column;
       max-width: 300px;

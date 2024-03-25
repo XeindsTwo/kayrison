@@ -1,7 +1,10 @@
 .header {
   padding: 12px 0;
-/*  position: sticky;*/
-  top: 0;
+/*  position: sticky;
+  top: 0;*/
+  @media (max-width: 880px) or (max-height: 850px) {
+    position: static;
+  }
 
   &__inner {
     @include flex-align-center(50);
@@ -9,6 +12,20 @@
 
   &__widget {
     @include flex-align-center(16);
+  }
+
+  &__logo {
+    transition: opacity .4s, outline-color .4s;
+    outline: 2px solid transparent;
+    border-radius: 4px;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &:focus {
+      outline-color: $accent;
+    }
   }
 
   &__left {
@@ -32,8 +49,22 @@
 
   &__link {
     padding-bottom: 2px;
-    transition: opacity .4s, border .4s;
+    transition: opacity .4s, color .4s, border .4s;
     position: relative;
+
+    &[data-theme='dark'] {
+      &::before {
+        background-color: $white;
+      }
+
+      &:focus {
+        color: $accentLight;
+
+        &::before {
+          background-color: $accentLight;
+        }
+      }
+    }
 
     &::before {
       @include pseudo;
