@@ -44,7 +44,7 @@
     @media (max-width: 590px) {
       grid-gap: 12px 10px;
     }
-    @media (max-width: 520px ) {
+    @media (max-width: 520px) {
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -103,7 +103,7 @@
       align-items: flex-start;
       @media (max-width: 920px) {
         background-color: $white;
-        box-shadow: 0 8px 32px 0 rgba(240,241,247,.88);
+        box-shadow: 0 8px 32px 0 rgba(240, 241, 247, .88);
         border-radius: 20px;
         min-height: 420px;
         &[data-theme='dark'] {
@@ -186,6 +186,12 @@
     transform: rotate(20deg);
     height: auto;
     width: 295px;
+    transition: opacity .4s;
+
+    &[data-theme='dark'] {
+      opacity: 0;
+    }
+
     @media (max-width: 920px) {
       top: 40px;
       right: 60px;
@@ -233,6 +239,14 @@
     @media (max-width: 385px) {
       width: 190px;
       top: 130px;
+    }
+
+    &--dark {
+      opacity: 0;
+
+      &[data-theme='dark'] {
+        opacity: 1;
+      }
     }
   }
 
