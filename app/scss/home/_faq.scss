@@ -126,6 +126,12 @@
     position: relative;
     padding: 23px;
 
+    &[data-theme='dark'] {
+      &::before, &::after {
+        background: $white;
+      }
+    }
+
     @include r($sm) {
       padding: 14px 19px;
       height: 40px;
@@ -133,6 +139,14 @@
     }
 
     &:focus {
+      &[data-theme='dark'] {
+        background-color: $white;
+
+        &::before, &::after {
+          background: $black;
+        }
+      }
+
       &::before {
         opacity: 1;
       }
@@ -154,7 +168,8 @@
       background: $black;
       opacity: 1;
       box-shadow: none;
-      transition: opacity .3s;
+      transition: opacity .4s;
+
       @include r($sm) {
         width: 11px;
       }

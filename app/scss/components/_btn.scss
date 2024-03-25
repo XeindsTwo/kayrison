@@ -15,6 +15,11 @@
   position: relative;
   overflow: hidden;
 
+  &[data-theme='dark'] {
+    box-shadow: none;
+    border-color: transparent;
+  }
+
   &::before {
     @include pseudo;
     width: 100%;
@@ -32,6 +37,10 @@
     border-color: $accent;
     color: $accent;
     box-shadow: 0 0 0 0 rgba(41, 49, 233, 0.45) inset, 0 0 0 0 rgba(12, 15, 86, 0.15);
+
+    &[data-theme='dark'] {
+      border-color: transparent;
+    }
 
     svg path {
       fill: $accent;
@@ -71,6 +80,11 @@
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.02);
   border: 1px solid transparent;
 
+  &[data-theme='dark'] {
+    background-color: $blackTheme30;
+    color: $white;
+  }
+
   &::before {
     display: none;
   }
@@ -80,6 +94,11 @@
     background-color: transparent;
     opacity: 1;
     color: $accent;
+
+    &[data-theme='dark'] {
+      border-color: $accentLight;
+      color: $accentLight;
+    }
   }
 
   &:hover {
@@ -87,6 +106,12 @@
     border-color: rgba($black, .12);
     color: $black;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
+
+    &[data-theme='dark'] {
+      border-color: rgba($white, .12);
+      background-color: transparent;
+      color: $white;
+    }
   }
 }
 
@@ -95,6 +120,12 @@
   color: $black;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.02);
   border: 1px solid rgba($black, .12);
+
+  &[data-theme='dark'] {
+    background-color: $blackTheme30;
+    color: $white;
+    border: 1px solid rgba($white, .08);
+  }
 
   &::before {
     display: none;
@@ -106,6 +137,12 @@
     opacity: 1;
     color: $accent;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.02);
+
+    &[data-theme='dark'] {
+      background-color: $white;
+      color: $black;
+      border-color: transparent;
+    }
   }
 
   &:hover {
@@ -113,5 +150,12 @@
     border-color: rgba($black, .12);
     color: $black;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
+
+    &[data-theme='dark'] {
+      background-color: transparent;
+      color: $accentLight;
+      border-color: $accentLight;
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
+    }
   }
 }

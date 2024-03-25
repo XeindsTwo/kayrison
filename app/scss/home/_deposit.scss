@@ -98,6 +98,11 @@
 
   &__link {
     margin-top: auto;
+    &[data-theme='dark'] {
+      background-color: $white;
+      border-color: rgba($black, .08);
+      color: $black;
+    }
 
     &:hover {
       border-color: #2BAD72;
@@ -119,13 +124,28 @@
       }
     }
 
+    &[data-theme='dark']:focus {
+      border-color: $white;
+      color: $white;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
     &[data-theme='dark']:hover {
       background-color: $white;
       border-color: transparent;
-      color: #0db06a;
+      color: #009454;
 
       svg path {
-        fill: #0db36a;
+        fill: #009454;
+      }
+    }
+
+    svg path {
+      &[data-theme='dark'] {
+        fill: $black;
       }
     }
   }
