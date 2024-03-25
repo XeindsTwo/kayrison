@@ -96,13 +96,26 @@
       color: $accent;
       padding-bottom: 1px;
 
+      &[data-theme='dark'] {
+        color: $accentLight;
+      }
+
       &:hover {
         color: $black;
+
+        &[data-theme='dark'] {
+          color: $white;
+        }
       }
 
       &:focus {
         color: $accent;
         border-bottom-color: $accent;
+
+        &[data-theme='dark'] {
+          color: $accentLight;
+          border-bottom-color: $accentLight;
+        }
       }
     }
   }

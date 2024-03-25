@@ -151,6 +151,9 @@
     }
     @media (max-width: 810px) {
       opacity: .7;
+      &[data-theme='dark'] {
+        opacity: 1;
+      }
     }
     @include r($tablet) {
       height: 220px;
@@ -159,6 +162,9 @@
       height: 200px;
       right: -230px;
       opacity: .5;
+      &[data-theme='dark'] {
+        opacity: .8;
+      }
     }
     @include r($phone) {
       height: 190px;

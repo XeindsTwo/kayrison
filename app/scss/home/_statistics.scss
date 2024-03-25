@@ -63,6 +63,7 @@
     @media (max-width: 920px) {
       border-radius: 20px;
       min-height: 430px;
+      z-index: 0;
     }
     @media (max-width: 870px) {
       min-height: 390px;
@@ -91,6 +92,7 @@
       transform: translateY(90px);
       @media (max-width: 920px) {
         transform: none;
+        z-index: 0;
       }
     }
 
