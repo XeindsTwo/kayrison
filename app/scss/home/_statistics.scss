@@ -31,6 +31,7 @@
 
   &[data-theme='dark'] {
     background-color: $blackTheme5;
+    box-shadow: 0px -12px 32px 0px rgba(0, 0, 0, 0.21);
   }
 
   &__list {
@@ -105,6 +106,10 @@
         box-shadow: 0 8px 32px 0 rgba(240,241,247,.88);
         border-radius: 20px;
         min-height: 420px;
+        &[data-theme='dark'] {
+          background-color: $blackTheme5;
+          box-shadow: 0 16px 40px 0 #202020;
+        }
       }
       @include r($tablet) {
         min-height: 395px;
