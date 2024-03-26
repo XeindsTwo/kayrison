@@ -190,10 +190,6 @@
     width: 295px;
     transition: opacity .4s;
 
-    &[data-theme='dark'] {
-      opacity: 0;
-    }
-
     @media (max-width: 920px) {
       top: 40px;
       right: 60px;
@@ -241,14 +237,6 @@
     @media (max-width: 385px) {
       width: 190px;
       top: 130px;
-    }
-
-    &--dark {
-      opacity: 0;
-
-      &[data-theme='dark'] {
-        opacity: 1;
-      }
     }
   }
 

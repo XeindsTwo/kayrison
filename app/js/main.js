@@ -2,14 +2,14 @@ import {theme} from './theme.js';
 
 theme();
 
-const body = document.body;
+const html = document.documentElement;
 const menuBtn = document.querySelector('.menu-btn');
 const header = document.querySelector('.header__mobile');
 const anchors = document.querySelectorAll('a.header__link-mobile');
 
 menuBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  body.classList.toggle('body--active');
+  html.classList.toggle('active');
   header.classList.toggle('active');
   menuBtn.classList.toggle('active');
   menuBtn.blur();
@@ -18,7 +18,7 @@ menuBtn.addEventListener('click', (event) => {
 function scrollToTarget(targetId) {
   const targetSection = document.querySelector(targetId);
   if (targetSection) {
-    body.classList.remove('body--active');
+    html.classList.remove('active');
     header.classList.remove('active');
     menuBtn.classList.remove('active');
     setTimeout(() => {
@@ -26,7 +26,7 @@ function scrollToTarget(targetId) {
       if (targetId.includes('#testimonials')) {
         targetOffset = targetSection.offsetTop;
       } else {
-        targetOffset = targetSection.offsetTop - 30;
+        targetOffset = targetSection.offsetTop - 25;
       }
       window.scrollTo({top: targetOffset, behavior: 'smooth'});
     }, 400);
@@ -35,8 +35,12 @@ function scrollToTarget(targetId) {
 
 function handleAnchorClick(event) {
   event.preventDefault();
-  const targetId = this.getAttribute('href');
-  scrollToTarget(targetId);
+  const href = this.getAttribute('href');
+  const hrefParts = href.split('#');
+  if (hrefParts.length === 2) {
+    const targetId = '#' + hrefParts[1];
+    scrollToTarget(targetId);
+  }
 }
 
 for (const anchor of anchors) {

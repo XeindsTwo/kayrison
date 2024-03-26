@@ -3,11 +3,10 @@ window.addEventListener('scroll', function () {
   const home = document.querySelector('.home');
   const statisticsSection = document.getElementById('statistics');
   const scrollY = window.scrollY || window.pageYOffset;
-  const minHeight = 850;
-  const minWidth = 880;
+  const minWidth = 885;
 
-  if (header && home && statisticsSection) {
-    if (window.innerWidth > minWidth || window.innerHeight > minHeight) {
+  if (window.innerWidth > minWidth) {
+    if (header && home && statisticsSection) {
       if (scrollY >= statisticsSection.offsetTop) {
         header.style.position = 'static';
         home.style.position = 'static';

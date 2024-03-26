@@ -1,5 +1,11 @@
 .policy {
   margin-top: 35px;
+  @media (max-width: 890px) {
+    margin-top: 26px;
+  }
+  @media (max-width: 780px) {
+    margin-top: 20px;
+  }
 
   &__title {
     margin-bottom: 48px;

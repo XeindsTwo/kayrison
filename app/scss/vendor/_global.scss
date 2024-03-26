@@ -1,31 +1,10 @@
 .html {
   position: relative;
   scroll-behavior: smooth;
-  overflow-x: hidden;
-}
 
-.html::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(13, 13, 13, .5);
-  transition: all .4s ease-in-out;
-  z-index: -1;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.html--active {
-  overflow: hidden;
-}
-
-.html--active::before {
-  z-index: 100;
-  opacity: 1;
-  visibility: visible;
+  &.active {
+    overflow: hidden;
+  }
 }
 
 .body {

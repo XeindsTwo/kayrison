@@ -1,13 +1,16 @@
 .header {
   padding: 12px 0;
-/*  position: sticky;
-  top: 0;*/
+  position: sticky;
+  top: 0;
   @media (max-width: 880px) or (max-height: 850px) {
     position: static;
   }
 
   &__inner {
     @include flex-align-center(50);
+    @media (max-width: 780px) {
+      gap: 35px;
+    }
   }
 
   &__widget {
@@ -31,6 +34,9 @@
   &__left {
     @include flex-align-center(30);
     margin-left: auto;
+    @media (max-width: 780px) {
+      display: none;
+    }
   }
 
   &__nav {
@@ -41,16 +47,35 @@
     @include r($desktop) {
       margin-right: 0;
     }
+
+    &--mobile {
+      display: none;
+      @media (max-width: 780px) {
+        display: block;
+      }
+    }
   }
 
   &__list {
     @include flex-align-center(18);
+    @media (max-width: 780px) {
+      gap: 27px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__link {
     padding-bottom: 2px;
     transition: opacity .4s, color .4s, border .4s;
     position: relative;
+    @media (max-width: 780px) {
+      font-size: 18px;
+      color: $white;
+    }
+    @media (max-width: 400px) {
+      font-size: 17px;
+    }
 
     &[data-theme='dark'] {
       &::before {
@@ -74,6 +99,9 @@
       height: 1px;
       background-color: $black;
       transition: width .4s, background-color .4s;
+      @media (max-width: 780px) {
+        background-color: $white;
+      }
     }
 
     &:hover {
@@ -84,10 +112,16 @@
 
     &:focus {
       color: $accent;
+      @media (max-width: 780px) {
+        color: $accentLight;
+      }
 
       &::before {
         width: 100%;
         background-color: $accent;
+        @media (max-width: 780px) {
+          background-color: $accentLight;
+        }
       }
     }
   }
@@ -96,5 +130,36 @@
     margin-left: auto;
     border-radius: 50px;
     padding: 8px 12px;
+    @media (max-width: 780px) {
+      margin-left: 0;
+      padding: 9px 13px;
+      &:hover {
+        background-color: transparent;
+        border-color: rgba($white, .58);
+        color: $white;
+      }
+      &:focus {
+        color: $accentLight;
+        border-color: $accentLight;
+      }
+    }
+  }
+
+  &__mobile {
+    @include flex-column(32);
+    padding: 18px 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 450;
+    background-color: $blackTheme100;
+    transform: translateX(-100%);
+    transition: transform .4s ease-in-out;
+
+    &.active {
+      transform: translateX(0);
+    }
   }
 }

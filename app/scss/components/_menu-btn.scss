@@ -6,9 +6,19 @@
   display: none;
   position: relative;
   border-radius: 50%;
-  padding: 18px 16px;
+  padding: 18px 15px;
   transition: all .4s;
-  background-color: $white40;
+  background-color: $white;
+  border: 1px solid transparent;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .05);
+
+  &[data-theme='dark'] {
+    background-color: $blackTheme30;
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $white;
+    }
+  }
 
   &:hover {
     background-color: $accent;
@@ -19,11 +29,26 @@
   }
 
   &:focus {
-    background-color: $accent;
+    background-color: transparent;
+    border-color: $accent;
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $accent;
+    }
+  }
+
+  &[data-theme='dark']:focus {
+    background-color: transparent;
+    border-color: $accentLight;
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $accentLight;
+    }
   }
 
   &--header {
-    @media (max-width: 342px) {
+    @media (max-width: 780px) {
+      margin-left: auto;
       display: flex;
       align-items: center;
       justify-content: center;
