@@ -1,5 +1,5 @@
 window.addEventListener('scroll', function () {
-  const header = document.querySelector('.header');
+  const header = document.querySelector('.header--sticky');
   const home = document.querySelector('.home');
   const statisticsSection = document.getElementById('statistics');
   const scrollY = window.scrollY || window.pageYOffset;
