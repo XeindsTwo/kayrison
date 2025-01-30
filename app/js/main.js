@@ -47,3 +47,23 @@ for (const anchor of anchors) {
   anchor.addEventListener('click', handleAnchorClick);
   anchor.addEventListener('touchstart', handleAnchorClick, {passive: true});
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const infoSection = document.querySelector(".info");
+  const closeButton = document.getElementById("close_aml_bot");
+
+  if (!infoSection || !closeButton) return;
+
+  const lastClosed = localStorage.getItem("amlCloseTime");
+  const oneWeek = 7 * 24 * 60 * 60 * 1000;
+  const now = Date.now();
+
+  if (lastClosed && now - lastClosed < oneWeek) {
+    infoSection.style.display = "none";
+  }
+
+  closeButton.addEventListener("click", function () {
+    infoSection.style.display = "none";
+    localStorage.setItem("amlCloseTime", Date.now());
+  });
+});

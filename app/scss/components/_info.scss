@@ -1,0 +1,153 @@
+.info {
+  background-color: #FEFEFE;
+  padding: 3px 0 0;
+  margin-bottom: 5px;
+  @media (max-width: 710px) {
+    padding: 12px 0;
+  }
+
+  &[data-theme='dark'] {
+    background-color: #2D2D2D;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    @media (max-width: 800px) {
+      justify-content: flex-start;
+      margin-left: -17px;
+    }
+    @media (max-width: 710px) {
+      flex-direction: column;
+    }
+  }
+
+  &__decor {
+    position: relative;
+    @media (max-width: 710px) {
+      display: none;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    transition: opacity .4s;
+    @media (max-width: 710px) {
+      display: none;
+    }
+
+    &--light {
+      &[data-theme='dark'] {
+        opacity: 0;
+      }
+    }
+
+    &--dark {
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+
+      &[data-theme='dark'] {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    @include r($phone) {
+      max-width: 260px;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    @include flex-align-center(7);
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    background-color: #f3f3f3;
+    border-radius: 200px;
+    font-weight: 500;
+    transition: background-color .4s, color .4s, border .4s;
+
+    &[data-theme='dark'] {
+      background-color: #3E3E3E;
+      color: $white;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
+    &:hover {
+      background-color: #e8e8e8;
+
+      &[data-theme='dark'] {
+        background-color: #505050;
+      }
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: rgba($black, .6);
+      color: $black;
+
+      &[data-theme='dark'] {
+        background-color: transparent;
+        border-color: rgba($white, .7);
+        color: $white;
+      }
+    }
+  }
+
+  &__close {
+    @include flex-center;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color .4s, border .4s;
+    @media (max-width: 710px) {
+      top: -4px;
+      transform: translateY(0);
+      width: 42px;
+      height: 42px;
+
+      svg {
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    &[data-theme='dark'] {
+      svg g path {
+        stroke: $white;
+      }
+    }
+
+    &:hover {
+      svg g path {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      border-color: $black;
+
+      &[data-theme='dark'] {
+        border-color: $white;
+      }
+
+      svg g path {
+        opacity: 1;
+      }
+    }
+  }
+}

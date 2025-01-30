@@ -2,6 +2,7 @@
   padding: 24px 0;
   position: sticky;
   top: 58px;
+  margin-bottom: 26px;
   @media (max-width: 885px) or (max-height: 850px) {
     position: static;
   }
@@ -170,6 +171,10 @@
     @include r($lg) {
       gap: 24px;
     }
+  }
+
+  &__text {
+    max-width: 366px;
   }
 
   &__actions {

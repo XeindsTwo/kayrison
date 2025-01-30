@@ -3,6 +3,7 @@
   background-color: $white30;
   padding: 135px 0 15px;
   box-shadow: 0 -12px 32px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color .4s, box-shadow .4s;
   @media (max-width: 1300px) {
     padding-top: 115px;
   }
@@ -170,16 +171,15 @@
 
   &__bottom {
     margin-top: 100px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     align-items: center;
-    grid-gap: 40px;
+    gap: 40px;
     @include r($lg) {
       margin-top: 70px;
     }
-    @media (max-width: 930px) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 17px;
+    @media (max-width: 1220px) {
+      flex-wrap: wrap;
+      gap: 25px
     }
     @include r($sm) {
       display: flex;
@@ -189,9 +189,22 @@
     }
   }
 
+  &__logo {
+    max-width: 235px;
+    width: 100%;
+    @media (max-width: 1220px) {
+      max-width: max-content;
+    }
+  }
+
   &__nav {
-    @media (max-width: 930px) {
+    margin: 0 auto;
+    @media (max-width: 1220px) {
       margin-left: auto;
+      margin-right: 0;
+    }
+    @media (max-width: 845px) {
+      width: 100%;
     }
     @include r($sm) {
       margin-left: 0;
@@ -204,7 +217,7 @@
     @media (max-width: 930px) {
       gap: 20px;
     }
-    @include r($sm) {
+    @media (max-width: 845px) {
       gap: 12px 27px;
       flex-wrap: wrap;
     }
@@ -263,7 +276,15 @@
   }
 
   &__policy {
-    margin-left: auto;
+    color: rgba($black, .56);
+
+    &[data-theme='dark'] {
+      color: rgba($white, .6);
+    }
+
+    @media (max-width: 1220px) {
+      width: 100%;
+    }
     @media (max-width: 930px) {
       grid-column: span 2;
       margin-right: auto;

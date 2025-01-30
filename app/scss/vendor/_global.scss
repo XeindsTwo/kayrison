@@ -1,5 +1,6 @@
 .html {
   position: relative;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 
   &.active {
@@ -128,6 +129,7 @@
 
   &--small {
     font-size: 40px;
+    line-height: 1.1;
     letter-spacing: -0.8px;
     @media (max-width: 1300px) {
       font-size: 36px;
