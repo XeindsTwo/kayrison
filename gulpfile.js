@@ -78,7 +78,7 @@ function scripts() {
   return src([
     'app/js/main.js'
   ])
-    .pipe(concat('main.min.js'))
+    .pipe(concat('main0102.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
     .pipe(browserSync.stream())
@@ -100,7 +100,7 @@ function styles() {
 
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
-  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+  watch(['app/js/**/*.js', '!app/js/main0102.min.js'], scripts);
   watch(['app/html/**/*.html'], htmlInclude);
   watch(['app/images/icons/*.svg'], svgSprites);
 }
@@ -109,7 +109,7 @@ function build() {
   return src([
     'app/css/style.min.css',
     'app/fonts/**/*',
-    'app/js/main.min.js',
+    'app/js/main0102.min.js',
     'app/*.html'
   ], {
     base: 'app'
